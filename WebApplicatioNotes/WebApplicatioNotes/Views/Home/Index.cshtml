@@ -1,0 +1,30 @@
+﻿@using WebApplicatioNotes.Models;
+@model IQueryable<WebApplicatioNotes.Models.Note>
+@{ 
+    ViewData["Title"] = "Home page";
+}
+<br> <br>
+<div>
+    <button class="text-center"><a asp-controller="Home" asp-action="NotesEdit" class="addbutton">Новая заметка</a></button>
+</div>
+
+<div class="text-center">
+    <br />
+    @foreach (Note entity in Model)
+    {
+    <div class="brd_note">
+        <p><span>Наименование заметки:</span> @entity.Name</p>
+        <p><span>Заметка:</span> @entity.NameNote</p>
+        <p><span>Тэг:</span> @entity.Tag</p>
+        <p><span>Дата создания:</span> @entity.Date</p>
+        <p><span>Дата напоминания:</span> @entity.Notification</p>
+        
+        <a asp-controller="Home" asp-action="NotesEdit" asp-route-id="@entity.Id">Редактировать</a>
+        <form method="post" asp-controller="Home" asp-action="NotesDelete">
+            <input type="hidden" name="Id" value="@entity.Id" />
+            <input type="submit" class="del" value="Удалить" />
+        </form>
+    </div>
+    <br /><br />
+    }
+</div>

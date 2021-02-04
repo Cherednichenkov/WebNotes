@@ -1,0 +1,132 @@
+﻿* {
+    margin: auto;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    text-decoration: none;
+    list-style: none;
+}
+
+.logo {
+    background: #000;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.margin-block {
+    margin-top: 50px;
+}
+
+th {
+    background: #000;
+    color: white;
+    text-shadow: 0 1px 1px #2D2020;
+    padding: 10px 20px;
+}
+
+    th:first-child, td:first-child {
+        text-align: match-parent;
+    }
+
+    th:first-child {
+        border-top-left-radius: 10px;
+    }
+
+    th:last-child {
+        border-top-right-radius: 10px;
+        border-right: none;
+    }
+
+td {
+    padding: 10px 20px;
+    background: #bcbcbc;
+    margin: auto;
+}
+
+tr:last-child td:first-child {
+    border-radius: 0 0 0 10px;
+}
+
+tr:last-child td:last-child {
+    border-radius: 0 0 10px 0;
+}
+
+tr td:last-child {
+    border-right: none;
+}
+
+.indent {
+    padding: 80px;
+}
+
+.addbutton {
+    display: inline-block;
+    color: #4e4e4e;
+    font-weight: 700;
+    text-decoration: none;
+    user-select: none;
+    padding: .5em 2em;
+    outline: none;
+    border: 2px solid;
+    border-radius: 1px;
+    transition: 0.2s;
+}
+
+.addbutton:hover {
+    color: #4e4e4e;
+    background: rgba(255,255,255,.2);
+}
+
+.addbutton:active {
+    color: #4e4e4e;
+    background: white;
+}
+
+span {
+    font-weight: bold;
+    font-size: 14pt;
+    font-family: Times, serif;
+    font-style: italic;
+    color: #000;
+}
+.p {
+    font-size: 14pt;
+    font-family: Times, serif;
+    color: rgba(255,255,255,.2);
+}
+.brd_note {
+    border: 4px double black;
+    background: #dbdbdb; 
+    padding: 10px;
+}
+.del {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #dbdbdb;
+    color: #007bff;
+    border: 0px solid #f9ffff;
+    border-radius: 0px;
+    font-size: 16px;
+    padding: 0px 0px;
+}
+
+    .del:hover {
+        text-decoration: underline;
+        color: #0000FF;
+    }
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    padding: 10px;
+    background: #000;
+    color: #fff;
+    width: 100%;
+}

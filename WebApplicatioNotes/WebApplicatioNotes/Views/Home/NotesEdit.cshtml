@@ -1,0 +1,67 @@
+﻿@model WebApplicatioNotes.Models.Note
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Заметки</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img class="graficlogo" src="~/img/logo.png" alt="Logo">
+        </div>
+    </header>
+    <div class="text-center">
+        <br />
+        <div>
+            <form asp-controller="Home" asp-action="NotesEdit" method="post">
+                <input type="hidden" asp-for="Id" />
+                <div asp-validation-summary="All"></div>
+                <table width="30%" cellspacing="0" cellpadding="4">
+                    <tr>
+                        <td><span>Наименование заметки: </span></td>
+                        <td>
+                            <input asp-for="Name" />
+                            <span asp-validation-for="Name"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span>Заметка: </span></td>
+                        <td>
+                            <textarea asp-for="NameNote"></textarea>
+                            <span asp-validation-for="NameNote"></span>
+                        </td>
+                    <tr>
+                        <td><span>Тег: </span></td>
+                        <td>
+                            <input asp-for="Tag" />
+                            <span asp-validation-for="Tag"></span>
+                        </td>
+
+                    <tr>
+                        <td><span>Дата напоминия: </span></td>
+                        <td>
+                            <input type="date" asp-for="Notification" />
+                            <span asp-validation-for="Notification"></span>
+                        </td>
+                    </tr>
+                </table>
+                        <br />
+                        <input type="submit" class="addbutton" value="Сохранить" />
+            </form>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            &copy; 2021 - Владислав Чередниченко
+        </div>
+    </footer>
+</body>
+</html>
